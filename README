@@ -1,0 +1,30 @@
+Skillbuilder1 directions (from class discussion)
+
+Part 1:
+
+Create class ElementUniquenessTest.java
+
+Copy body of TimingTemplate.java into ElementUniquenessTest.java
+
+Reuse the key components from CodeStubs.txt into ElementUniquenessTest.java
+Understand how and why these work
+
+Verify that code runs for ElementUniquenessTest.java.
+Adjust parameters to get "reasonable" run times
+(say 4 seconds and 16 seconds approximately)
+
+--
+
+Part 2: Integrate the TimingEvaluation components
+
+Create class ElementUniquenessTestEval.java as a copy
+of ElementUniquenessTest.java
+
+Add to Step 7 and 12 (from CodeStubs.txt)
+Change N1 and N2 to appropriate variables
+
+
+
+
+
+

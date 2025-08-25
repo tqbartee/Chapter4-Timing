@@ -1,0 +1,86 @@
+// Code stubs below
+
+// FOR PART 1
+
+    public static boolean unique1(int[] data, int timesToRun) {
+        int n = data.length;
+        for (int nthrun = 0; nthrun < timesToRun; nthrun++)
+            for (int j=0; j < n-1; j++)
+                for (int k=j+1; k < n; k++)
+                    if (data[j] == data[k])
+                        return false;            // found duplicate pair
+        return true;                         // if we reach this, elements are unique
+    }
+
+
+    public static int[] generateSequentialIntArray(int size) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = i;
+        }
+        return array;
+    }
+
+
+        int inputArraySize1 = 262144;
+        int inputArraySize2 = 524288;
+        int timesToRun = 1;
+        boolean answer;
+        int[] inputArray;
+
+        System.out.println("Building array...");
+        inputArray = generateSequentialIntArray(inputArraySize1);
+
+        System.out.println("Running elementUniqueness...");
+        long startTime = System.currentTimeMillis();
+
+        answer = unique1(inputArray, timesToRun);
+        if (answer) {
+            System.out.println("The array was unique");
+        }
+        else {
+            System.out.println("The array was not unique");
+        }
+
+        double endTime = System.currentTimeMillis();
+        double elapsed = endTime - startTime;
+        String outputString = new String(Double.toString(elapsed));
+        System.out.println(outputString);
+        double elapsedseconds = (double) elapsed/1000;
+        outputString = ("Time in seconds is: " +
+                String.format("%.5f", elapsedseconds));
+        System.out.println(outputString);
+
+        System.out.println("Building array...");
+        inputArray = generateSequentialIntArray(inputArraySize2);
+
+        startTime = System.currentTimeMillis();
+
+        answer = unique1(inputArray, timesToRun);
+        if (answer) {
+            System.out.println("The array was unique");
+        }
+        else {
+            System.out.println("The array was not unique");
+        }
+
+        endTime = System.currentTimeMillis();
+        elapsed = endTime - startTime;
+        outputString = new String(Double.toString(elapsed));
+        System.out.println(outputString);
+        elapsedseconds = (double) elapsed/1000;
+        outputString = ("Time in seconds is: " +
+                String.format("%.5f", elapsedseconds));
+        System.out.println(outputString);
+
+
+// FOR PART 2
+
+        // Now make predictions for second run times - from Timing Evaluation
+        TimingEvaluation ourTimingEvaluation = new TimingEvaluation();
+        ourTimingEvaluation.generatePredictionValues(N1, N2, elapsedseconds);
+        ourTimingEvaluation.printPredictionReport();
+
+        // Now call the post-test analysis
+        ourTimingEvaluation.generatePostTestValues(elapsedseconds);
+        ourTimingEvaluation.printPostTestReport();
